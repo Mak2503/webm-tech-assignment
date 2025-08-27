@@ -40,7 +40,7 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <div className="flex justify-center mt-16">
-          <a href="#">
+          <a href="#" className="lg:w-auto w-full">
             <CTAButton>sign up for free</CTAButton>
           </a>
         </div>
