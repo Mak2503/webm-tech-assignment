@@ -1,0 +1,218 @@
+/* ------------------------------------- HERO LIGHT --------------------------------- */
+/* Hero Container */
+.hero-container {
+  background: url(https://dynamic-images.admiralmarkets.com/800x,webp/static-images.admiralmarkets.com/data/homepage/swap-commissions/commission-free-mobile.png)
+    no-repeat bottom;
+  background-size: contain;
+  position: relative;
+  min-height: 675px;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-container {
+    background: url(https://dynamic-images.admiralmarkets.com/1500x,webp/static-images.admiralmarkets.com/data/homepage/swap-commissions/commission-free-tablet.png)
+      no-repeat 100% 100%;
+    background-size: contain;
+    min-height: 740px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-container {
+    background: url(https://dynamic-images.admiralmarkets.com/2000x,webp/static-images.admiralmarkets.com/data/homepage/swap-commissions/commission-free-desktop.png)
+      no-repeat 0 100%;
+    background-size: contain;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+}
+
+/* Hero Body */
+.hero-body {
+  padding-top: 32px;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-body {
+    padding-top: 48px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-body {
+    padding-top: 0;
+  }
+}
+
+/* Hero Body and Title */
+.hero-body .hero-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.25px;
+  margin-bottom: 10px;
+  color: #181e30;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-body .hero-title {
+    max-width: 540px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.25px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-body .hero-title {
+    max-width: 500px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.25px;
+  }
+}
+
+/* Hero Text */
+.hero-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  margin-bottom: 20px;
+  color: #293050;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-text {
+    margin-bottom: 40px;
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-text {
+    max-width: 450px;
+  }
+}
+
+/* ------------------------------------- HERO DARK --------------------------------- */
+/* Hero Container */
+.hero-dark-container {
+  background: url(https://dynamic-images.admiralmarkets.com/800x,webp/static-images.admiralmarkets.com/data/homepage/swap-commissions/swap-free-mobile.png)
+    no-repeat bottom;
+  background-size: contain;
+  position: relative;
+  min-height: 675px;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-dark-container {
+    background: url(https://dynamic-images.admiralmarkets.com/1500x,webp/static-images.admiralmarkets.com/data/homepage/swap-commissions/swap-free-tablet.png)
+      no-repeat 100% 100%;
+    background-size: contain;
+    min-height: 740px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-dark-container {
+    background: url(https://dynamic-images.admiralmarkets.com/2000x,webp/static-images.admiralmarkets.com/data/homepage/swap-commissions/swap-free-desktop.png)
+      no-repeat 100% 100%;
+    background-size: contain;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+}
+
+/* Hero Body */
+.hero-dark-body {
+  padding-top: 32px;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-dark-body {
+    padding-top: 48px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-dark-body {
+    padding-top: 0;
+  }
+}
+
+/* Hero Sub Title */
+.hero-dark-subtitle {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.47px;
+}
+
+/* Hero Body and Title */
+.hero-dark-body .hero-dark-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.25px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-dark-body .hero-dark-title {
+    max-width: 540px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.25px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-dark-body .hero-dark-title {
+    max-width: 450px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.25px;
+    margin: 17px 0 10px 0;
+  }
+}
+
+/* Hero Text */
+.hero-dark-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 544px) {
+  .hero-dark-text {
+    margin-bottom: 40px;
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-dark-text {
+    max-width: 400px;
+  }
+}

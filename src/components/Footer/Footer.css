@@ -1,0 +1,22 @@
+.footer-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: #293050;
+}
+
+.icon-youtube {
+  mask: url(https://static-images.admiralmarkets.com/data/icons/soc_youtube_24px.svg) no-repeat center / contain;
+}
+.icon-linkedin {
+  mask: url(https://static-images.admiralmarkets.com/data/icons/soc_linkedin_24px.svg) no-repeat center / contain;
+}
+.icon-instagram {
+  mask: url(https://static-images.admiralmarkets.com/data/icons/soc_instagram_24px.svg) no-repeat center / contain;
+}
+.icon-telegram {
+  mask: url(https://static-images.admiralmarkets.com/data/icons/soc_telegram_24px.svg) no-repeat center / contain;
+}
+.icon-twitter {
+  mask: url(https://static-images.admiralmarkets.com/data/icons/soc_x_24px.svg) no-repeat center / contain;
+}

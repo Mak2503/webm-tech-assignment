@@ -1,0 +1,143 @@
+/* =========================
+   In Touch Section
+========================= */
+.in-touch {
+  padding: 64px 0 84px;
+  margin-top: 154px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 992px) {
+  .in-touch {
+    margin-top: 138px;
+    padding: 40px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .in-touch {
+    margin-top: 32px;
+    margin-bottom: 114px;
+    padding-bottom: 190px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .in-touch {
+    margin-bottom: 0;
+    padding-bottom: 114px;
+    box-shadow: none;
+    overflow: hidden;
+  }
+}
+
+/* =========================
+   Wrapper
+========================= */
+.in-touch-wrapper {
+  display: flex;
+  max-width: 1008px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .in-touch-wrapper {
+    flex-direction: column-reverse;
+    margin: 0 -16px;
+    padding: 40px 16px 190px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* =========================
+   Image
+========================= */
+.get-in-touch-img {
+  max-width: calc(100% - 396px);
+  width: 100%;
+  position: relative;
+}
+
+.get-in-touch-img::after,
+.get-in-touch-img img {
+  position: absolute;
+  height: 382px;
+  width: 521px;
+}
+
+.get-in-touch-img::after {
+  content: attr(data-text);
+  top: -153px;
+  left: 32%;
+  width: 160px;
+  font-size: 32px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-38deg) skew(23deg);
+}
+
+.get-in-touch-img img {
+  top: -109px;
+  left: calc(50% - 25px);
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 992px) {
+  .get-in-touch-img::after,
+  .get-in-touch-img img {
+    height: 257px;
+    width: 360px;
+  }
+
+  .get-in-touch-img::after {
+    top: -130px;
+    left: calc(50% - 75px);
+    width: 110px;
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .get-in-touch-img::after {
+    top: 16px;
+    left: calc(50% - 50px);
+  }
+
+  .get-in-touch-img img {
+    top: 40px;
+    left: 50%;
+  }
+}
+
+/* =========================
+   Info
+========================= */
+.get-in-touch-info {
+  max-width: 408px;
+  width: 100%;
+  padding-left: 12px;
+}
+
+@media screen and (max-width: 992px) {
+  .get-in-touch-img,
+  .get-in-touch-info {
+    width: 50%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .get-in-touch-img,
+  .get-in-touch-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .get-in-touch-info {
+    padding-left: 0;
+  }
+}

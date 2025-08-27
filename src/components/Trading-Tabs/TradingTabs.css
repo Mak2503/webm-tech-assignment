@@ -1,0 +1,26 @@
+.trading-tabs-desktop {
+  background-image: radial-gradient(
+    circle,
+    rgba(7, 39, 53, 0.99) 0,
+    #031118 100%
+  );
+  padding-top: 40px;
+  position: relative;
+  min-height: 593px;
+}
+
+@media screen and (max-width: 992px) {
+  .trading-tabs-desktop {
+    display: none;
+  }
+}
+
+.trading-tabs-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .trading-tabs-mobile {
+    display: block;
+  }
+}

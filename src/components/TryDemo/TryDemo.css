@@ -1,0 +1,14 @@
+.demo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .demo-wrapper {
+    flex-direction: row;
+  }
+}
