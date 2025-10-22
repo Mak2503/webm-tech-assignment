@@ -41,7 +41,7 @@ const NavlistMobile = () => {
             <a href="/about-us" className="hover:underline">
               About us
             </a>
-            <a href="#" className="hover:underline">
+            <a href="/contact-us" className="hover:underline">
               Contact us
             </a>
           </nav>

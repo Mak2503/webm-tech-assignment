@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
   return (
-    <section className="bg-gray-50 text-gray-800 py-12 px-6 md:px-16 lg:px-24">
+    <section className="bg-gray-50 text-gray-800 py-12 px-6 md:px-16 lg:px-24 text-center md:text-left">
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="text-center">
           <h1 className="text-3xl md:text-4xl font-semibold text-primary-text mb-4">

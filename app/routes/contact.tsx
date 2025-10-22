@@ -9,8 +9,17 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+type ContactDetails = {
+  languages: string;
+  phone: string;
+  email: string;
+};
+
 export default function Contact() {
-  const contacts = {
+  const contacts: Record<
+    "Argentina" | "Bolivia" | "Brazil" | "Bulgaria" | "Canada" | "India",
+    ContactDetails
+  > = {
     Argentina: {
       languages: "Es, En",
       phone: "+54 11 1234 5678",
@@ -43,11 +52,14 @@ export default function Contact() {
     },
   };
 
-  const [selectedCountry, setSelectedCountry] = useState("India");
+  const [selectedCountry, setSelectedCountry] =
+    useState<keyof typeof contacts>("India");
   const contact = contacts[selectedCountry];
+
   return (
     <section className="bg-[#f7f8fc]">
-      <div className="container">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
         <div>
           <h1 className="text-2xl font-bold text-slate-800 mb-2">
             Contact information
@@ -56,16 +68,34 @@ export default function Contact() {
             Select the country you are calling from
           </p>
         </div>
+
+        {/* Card */}
         <div className="py-8 w-full flex flex-col items-center">
-          <div className="w-full max-w-full bg-white rounded-2xl shadow-sm p-8">
+          <div className="w-full bg-white rounded-2xl shadow-sm p-8">
             <div className="flex flex-col md:flex-row gap-8">
-              {/* Country List */}
+              {/* Country List / Dropdown */}
               <div className="w-full md:w-1/3">
-                <ul className="flex flex-col space-y-1">
+                {/* Mobile Dropdown */}
+                <div className="md:hidden mb-6">
+                  <select
+                    value={selectedCountry}
+                    onChange={(e) => setSelectedCountry(e.target.value as keyof typeof contacts)}
+                    className="w-full border border-slate-300 rounded-lg px-4 py-2 text-slate-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  >
+                    {Object.keys(contacts).map((country) => (
+                      <option key={country} value={country}>
+                        {country}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Desktop List */}
+                <ul className="hidden md:flex flex-col space-y-1">
                   {Object.keys(contacts).map((country) => (
                     <li
                       key={country}
-                      onClick={() => setSelectedCountry(country)}
+                      onClick={() => setSelectedCountry(country as keyof typeof contacts)}
                       className={`cursor-pointer flex items-center justify-between rounded-lg px-4 py-2 leading-loose tracking-wide hover:bg-slate-100 transition ${
                         selectedCountry === country
                           ? "bg-blue-50 text-blue-600"
@@ -73,14 +103,16 @@ export default function Contact() {
                       }`}
                     >
                       {country}
-                      {selectedCountry === country && <ChevronRight className="h-5 w-5" />}
+                      {selectedCountry === country && (
+                        <ChevronRight className="h-5 w-5" />
+                      )}
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Contact Details */}
-              <div className="flex-1 border-l border-slate-200 pl-6">
+              <div className="flex-1 border-t md:border-t-0 md:border-l border-slate-200 pt-6 md:pt-0 md:pl-6">
                 <h2 className="text-xl font-semibold text-slate-800 mb-4">
                   Contacts
                 </h2>
