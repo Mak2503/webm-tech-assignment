@@ -2,7 +2,7 @@ import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "About | Admirals Clone" },
+    { title: "About Us | Admirals Clone" },
     { name: "description", content: "About Us" },
   ];
 }
@@ -12,7 +12,7 @@ export default function About() {
     <section className="bg-gray-50 text-gray-800 py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="text-center">
-          <h1 className="text-3xl md:text-5xl font-semibold text-primary-text mb-4">
+          <h1 className="text-3xl md:text-4xl font-semibold text-primary-text mb-4">
             About Us
           </h1>
           <p className="text-lg text-gray-600">
@@ -22,7 +22,7 @@ export default function About() {
           </p>
         </header>
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Dedication to Quality
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -35,7 +35,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Global Presence
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -46,7 +46,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Regulatory Authorisation and Licence
           </h2>
           <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Flexible Trading Accounts
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -95,7 +95,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Education and Analytics
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -108,7 +108,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Customer Support
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -120,7 +120,7 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="text-4xl font-semibold text-primary-text mb-3">
+          <h2 className="text-3xl font-semibold text-primary-text mb-3">
             Security and Software
           </h2>
           <p className="text-gray-700 leading-relaxed">

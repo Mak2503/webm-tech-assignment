@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./App.css";
 import Nav from "./components/Nav";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Footer from "./components/Footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,6 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollToTopButton />
         <Nav />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
