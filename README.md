@@ -1,69 +1,72 @@
-# React + TypeScript + Vite
+# Admirals Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **stock market website** inspired by [Admirals](https://admirals.com), created for learning and experimentation.  
+This project aims to replicate key sections of a professional trading platform using modern web technologies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> **Note:** Currently, only the following pages are functional:
+> - Home  
+> - About Us  
+> - Contact Us  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Installation & Setup
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository**
+  ```bash
+   git clone https://github.com/Mak2503/webm-tech-assignment.git
+   cd webm-tech-assignment
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install Dependencies**
+  ```bash
+  npm install
+  ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **For starting react dev server**
+  ```bash
+  npm run dev
+  ```
+
+4. **For starting graphql server**
+  ```bash
+  npm run server
+  ```
+
+5. **For building and starting the production graphql server and react app**
+  ```bash
+  npm run start
+  ```
+
+Your project runs in
+  Client: http://localhost:3000
+  Server: http://localhost:4000/graphql
+
+## 📁 Project Structure
+  ```
+  webm-tech-assignment/
+  ├── public/
+  ├── app/
+  │   ├── routes/
+  │   │   ├── home.tsx
+  │   │   ├── about.tsx
+  │   │   ├── contact.tsx
+  │   ├── components/
+  │   ├── assets/
+  │   ├── routes.ts
+  │   └── root.tsx
+  ├── package.json
+  └── README.md
+  ```

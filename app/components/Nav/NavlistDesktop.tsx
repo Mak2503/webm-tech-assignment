@@ -5,8 +5,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { useLocation } from "react-router";
 
 const NavlistDesktop = () => {
+  const location = useLocation()
   return (
     <NavigationMenu viewport={false} className="hidden md:block">
       <NavigationMenuList>
@@ -319,8 +321,10 @@ const NavlistDesktop = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>About us</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <a href="/about-us" className={`hover:text-blue-500 ${location.pathname.includes("about-us") && "text-blue-500"}`}>
+            <NavigationMenuTrigger>About us</NavigationMenuTrigger>
+          </a>
+          {/* <NavigationMenuContent>
             <ul className="space-y-4 p-3 w-full min-w-[200px]">
               <li>
                 <a href="#" className="hover:text-blue-500">
@@ -348,10 +352,12 @@ const NavlistDesktop = () => {
                 </a>
               </li>
             </ul>
-          </NavigationMenuContent>
+          </NavigationMenuContent> */}
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Contact us</NavigationMenuTrigger>
+          <a href="/contact-us" className={`hover:text-blue-500 ${location.pathname.includes("contact-us") && "text-blue-500"}`}>
+            <NavigationMenuTrigger>Contact us</NavigationMenuTrigger>
+          </a>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

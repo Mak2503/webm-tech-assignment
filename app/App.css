@@ -20,6 +20,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-text: var(--primary-text);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
@@ -55,6 +56,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
+  --primary-text: #404855;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -120,3 +122,36 @@
     @apply bg-background text-foreground;
   }
 }
+
+.cta-button {
+  background-color: #23b064;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background-color: #1e8c4f;
+}
+
+.container {
+  max-width: 1172px;
+  padding: 0 16px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  padding: 60px 0;
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    padding: 44px 0;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  section {
+    padding: 32px 0;
+  }
+}
+
