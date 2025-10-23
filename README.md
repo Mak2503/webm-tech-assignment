@@ -29,17 +29,13 @@ This project aims to replicate key sections of a professional trading platform u
    git clone https://github.com/Mak2503/webm-tech-assignment.git
    cd webm-tech-assignment
    ```
-2. **Checkout the branch**
-  ```bash
-  git checkout ssr-view
-  ```
 
-3. **Install Dependencies**
+2. **Install Dependencies**
   ```bash
   npm install
   ```
 
-4. **For starting react dev server**
+3. **For starting react dev server**
   ```bash
   npm run dev
   ```
