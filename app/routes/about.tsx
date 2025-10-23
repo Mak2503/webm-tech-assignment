@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client/react";
 import type { Route } from "./+types/home";
+import { gql } from "@apollo/client";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,7 +9,25 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+const CONTACT_QUERY = gql`
+  query ContactsList {
+    contactsList {
+      id
+      name
+      email
+      message
+    }
+  }
+`
+
 export default function About() {
+  const { data, loading, error } = useQuery(CONTACT_QUERY)
+
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
+
+  console.log("Contacts Data", data)
+
   return (
     <section className="bg-gray-50 text-gray-800 py-12 px-6 md:px-16 lg:px-24 text-center md:text-left">
       <div className="max-w-5xl mx-auto space-y-10">

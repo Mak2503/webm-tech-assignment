@@ -4,11 +4,6 @@ import { ApolloProvider, useMutation } from "@apollo/client/react";
 import { Button } from "@/components/ui/button";
 import type { ContactInput } from "@/__generated__/types";
 
-const client = new ApolloClient({
-  link: new HttpLink({ uri: "http://localhost:4000/graphql" }),
-  cache: new InMemoryCache(),
-});
-
 const CONTACT_MUTATION = gql`
   mutation Contact($data: ContactInput!) {
     contact(data: $data)
@@ -21,6 +16,12 @@ const ContactPage = () => {
     email: "",
     message: "",
   });
+
+  if (typeof window === "undefined") {
+    console.log("Running on server");
+  } else {
+    console.log("Running on client", window);
+  }
 
   const [sendContact, { loading, error, data }] = useMutation(CONTACT_MUTATION);
 
@@ -142,8 +143,8 @@ const ContactPage = () => {
 
 export default function ContactInfo() {
   return (
-    <ApolloProvider client={client}>
+    // <ApolloProvider client={client}>
       <ContactPage />
-    </ApolloProvider>
+    // </ApolloProvider>
   );
 }

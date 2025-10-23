@@ -12,6 +12,13 @@ import "./App.css";
 import Nav from "./components/Nav";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Footer from "./components/Footer";
+import { ApolloProvider } from "@apollo/client/react";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  link: new HttpLink({ uri: "http://localhost:4000/graphql" }),
+  cache: new InMemoryCache(),
+});
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,7 +32,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <ScrollToTopButton />
         <Nav />
-        {children}
+        <ApolloProvider client={client}>
+          {children}
+        </ApolloProvider>
         <Footer />
         <ScrollRestoration />
         <Scripts />
