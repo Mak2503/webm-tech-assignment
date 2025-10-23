@@ -39,19 +39,25 @@ This project aims to replicate key sections of a professional trading platform u
   ```bash
   npm run dev
   ```
+4. **For starting react dev server using wrangler**
+  ```bash
+  npm run dev:cf
+  ```
 
-4. **For starting graphql server**
+5. **For starting graphql server**
   ```bash
   npm run server
   ```
 
-5. **For building and starting the production graphql server and react app**
+6. **For building and starting the production graphql server and react app**
   ```bash
   npm run start
   ```
 
 Your project runs in
-  Client: http://localhost:3000
+  Client: 
+    Router    : http://localhost:5173
+    Wrangler  : http://localhost:8787
   Server: http://localhost:4000/graphql
 
 ## 📁 Project Structure
