@@ -39,15 +39,24 @@ This project aims to replicate key sections of a professional trading platform u
   npm install
   ```
 
-4. **Start the development server**
+4. **For starting react dev server**
   ```bash
   npm run dev
   ```
 
-5. **Build and start the production server**
+4. **For starting graphql server**
+  ```bash
+  npm run server
+  ```
+
+5. **For building and starting the production graphql server and react app**
   ```bash
   npm run start
   ```
+
+Your project runs in
+  Client: http://localhost:3000
+  Server: http://localhost:4000/graphql
 
 ## 📁 Project Structure
   ```
