@@ -37,10 +37,14 @@ export const schema = createSchema({
     Query: {
       contactsList: async () => {
         return new Promise((resolve, reject) => {
-          db.all("SELECT * FROM contacts", [], (err, rows) => {
-            if (err) reject(err);
-            else resolve(rows);
-          });
+          setTimeout(() => {
+            console.log("Timeout");
+            db.all("SELECT * FROM contacts", [], (err, rows) => {
+              console.log("Inside query");
+              if (err) reject(err);
+              else resolve(rows);
+            });
+          }, 2000);
         });
       },
     },
