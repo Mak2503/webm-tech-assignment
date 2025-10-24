@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@apollo/client": "^4.0.7",
+    "@apollo/client-integration-react-router": "^0.14.0-alpha.0",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-slot": "^1.2.3",
