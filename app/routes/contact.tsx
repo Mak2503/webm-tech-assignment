@@ -1,14 +1,8 @@
 import { useState } from "react";
-import { ApolloClient, HttpLink, InMemoryCache, gql } from "@apollo/client";
-import { ApolloProvider, useMutation } from "@apollo/client/react";
+import { useMutation } from "@apollo/client/react";
 import { Button } from "@/components/ui/button";
 import type { ContactInput } from "@/__generated__/types";
-
-const CONTACT_MUTATION = gql`
-  mutation Contact($data: ContactInput!) {
-    contact(data: $data)
-  }
-`;
+import { CONTACT_MUTATION } from "@/queries";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<ContactInput>({
@@ -17,26 +11,20 @@ const ContactPage = () => {
     message: "",
   });
 
-  if (typeof window === "undefined") {
-    console.log("Running on server");
-  } else {
-    console.log("Running on client", window);
-  }
-
-  const [sendContact, { loading, error, data }] = useMutation(CONTACT_MUTATION);
+  const [contact, { loading, error, data }] = useMutation(CONTACT_MUTATION);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev: ContactInput) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data", formData)
     try {
-      await sendContact({ variables: { data: formData } });
+      await contact({ variables: { data: formData } });
       alert("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {

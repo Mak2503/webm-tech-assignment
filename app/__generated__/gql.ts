@@ -1,6 +1,6 @@
 /* eslint-disable */
 import * as types from './graphql';
-import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+import { type TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 
 /**
  * Map of all GraphQL operations in the project.
@@ -14,10 +14,12 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "\n  # mutation Contact($name: String!, $email: String!, $message: String!) {\n  #   contact(name: $name, email: $email, message: $message)\n  # }\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n": typeof types.ContactDocument,
+    "\n  query ContactsList {\n    contactsList {\n      id\n      name\n      email\n      message\n    }\n  }\n": typeof types.ContactsListDocument,
+    "\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n": typeof types.ContactDocument,
 };
 const documents: Documents = {
-    "\n  # mutation Contact($name: String!, $email: String!, $message: String!) {\n  #   contact(name: $name, email: $email, message: $message)\n  # }\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n": types.ContactDocument,
+    "\n  query ContactsList {\n    contactsList {\n      id\n      name\n      email\n      message\n    }\n  }\n": types.ContactsListDocument,
+    "\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n": types.ContactDocument,
 };
 
 /**
@@ -37,7 +39,11 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  # mutation Contact($name: String!, $email: String!, $message: String!) {\n  #   contact(name: $name, email: $email, message: $message)\n  # }\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n"): (typeof documents)["\n  # mutation Contact($name: String!, $email: String!, $message: String!) {\n  #   contact(name: $name, email: $email, message: $message)\n  # }\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n"];
+export function gql(source: "\n  query ContactsList {\n    contactsList {\n      id\n      name\n      email\n      message\n    }\n  }\n"): (typeof documents)["\n  query ContactsList {\n    contactsList {\n      id\n      name\n      email\n      message\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n"): (typeof documents)["\n  mutation Contact($data: ContactInput!) {\n    contact(data: $data)\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};
