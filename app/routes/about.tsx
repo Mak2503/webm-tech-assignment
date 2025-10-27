@@ -1,8 +1,8 @@
-import { useQuery, useReadQuery } from "@apollo/client/react";
+import { useReadQuery } from "@apollo/client/react";
 import type { Route } from "./+types/home";
-import { gql } from "@apollo/client";
-import { apolloLoader } from "~/apollo";
+import { apolloLoader } from "@/apollo";
 import { useLoaderData } from "react-router";
+import { CONTACTS_LIST_QUERY } from "@/queries";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,30 +11,19 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const CONTACT_QUERY = gql`
-  query ContactsList {
-    contactsList {
-      id
-      name
-      email
-      message
-    }
-  }
-`
-
 export const loader = apolloLoader<Route.LoaderArgs>()(({ preloadQuery }) => {
-  const myQueryRef = preloadQuery(CONTACT_QUERY);
+  const contactsListQueryRef = preloadQuery(CONTACTS_LIST_QUERY);
   return {
-    myQueryRef,
+    contactsListQueryRef,
   };
 });
 
 
 
 export default function About() {
-  const { myQueryRef } = useLoaderData<typeof loader>();
+  const { contactsListQueryRef } = useLoaderData<typeof loader>();
 
-  const { data, dataState, error } = useReadQuery(myQueryRef);
+  const { data, dataState, error } = useReadQuery(contactsListQueryRef);
   // const { data, loading, error } = useQuery(myQueryRef)
 
   if (dataState === 'streaming') return "Loading...";
