@@ -10,7 +10,6 @@ startTransition(() => {
     document,
     <StrictMode>
       <ApolloProvider client={client}>
-        {" "}
         <HydratedRouter />
       </ApolloProvider>
     </StrictMode>
